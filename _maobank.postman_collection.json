@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "89f42331-56b9-4b0b-96dc-49ab1af433ac",
+		"name": "_maobank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "#1 Informações Básicas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cpf\": \"18824227244\",\r\n  \"dataNascimento\": \"2000-10-15\",\r\n  \"email\": \"papercut@user.com\",\r\n  \"nome\": \"Gleyton\",\r\n  \"sobrenome\": \"Lima\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/proposta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"proposta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#2 Endereço",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bairro\": \"Brooklin\",\r\n  \"cep\": \"04581-060\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"complemento\": \"3º e 4º andar\",\r\n  \"estado\": \"São Paulo\",\r\n  \"rua\": \"Rua Pascal Pais, 525\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/proposta/1/endereco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"proposta",
+						"1",
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#3 Documento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cpf",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/fotodocumento.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/proposta/1/documento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"proposta",
+						"1",
+						"documento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#4 Aceite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"aceita\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/proposta/1/aceite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"proposta",
+						"1",
+						"aceite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#4 Aceite - Proposta Detalhes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/proposta/1/aceite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"proposta",
+						"1",
+						"aceite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#5 Definir Senha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"senha\": 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/conta/6/definir-senha/f0717b04-608d-412a-bb7c-6640032dc3aa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"conta",
+						"6",
+						"definir-senha",
+						"f0717b04-608d-412a-bb7c-6640032dc3aa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#6 Gerar Transferencia para teste",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor\": \"10.00\",\r\n    \"dataRealizacao\": \"2020-10-10\",\r\n    \"documentoIdentificadorOrigem\": \"PIX\",\r\n    \"bancoOrigem\": \"104\",\r\n    \"contaOrigem\": \"9999\",\r\n    \"agenciaOrigem\": \"99999999\",\r\n    \"codigoUnico\": \"c001\",\r\n    \"contaDestino\": \"11111111\",\r\n    \"agenciaDestino\": \"0001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transferencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transferencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#999 Checar Senha (Teste)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"senha\": 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/conta/6/checar-senha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"conta",
+						"6",
+						"checar-senha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#7 Consultar Saldo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"senha\": 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/conta/6/saldo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"conta",
+						"6",
+						"saldo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
